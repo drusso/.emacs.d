@@ -51,4 +51,6 @@
 (save-place-mode 1)
 (desktop-save-mode 1)
 
+(load-conf "hack-load-history.el")
+
 (server-start)
