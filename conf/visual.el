@@ -10,6 +10,11 @@
 (global-display-line-numbers-mode)
 (set-face-attribute 'line-number-current-line nil :foreground "#66D9EF")
 
+;; Add and customize a divider between windows.
+(setq window-divider-default-right-width 1)
+(set-face-foreground 'window-divider "black")
+(window-divider-mode)
+
 ;; Turn on diff-hl-mode everywhere.
 (global-diff-hl-mode)
 (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
