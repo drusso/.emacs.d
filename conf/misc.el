@@ -69,9 +69,10 @@ Courtesy of:
           for r = (format "^\\([^%c\n]+%c\\)\\{%d\\}" separator separator i)
           do (font-lock-add-keywords nil `((,r (1 '(face (:foreground ,c)))))))))
 
-(defun enter-visual-line-mode ()
+(defun dr/enter-visual-line-mode ()
   "Helper for initializing visual-line-mode."
   (interactive)
-  (toggle-truncate-lines -1)
-  (auto-fill-mode -1)
-  (turn-on-visual-line-mode))
+  (toggle-truncate-lines -1) ;; Wrap long lines visually.
+  (turn-on-visual-line-mode) ;; Edit/navigation commands act on visual lines.
+  (auto-fill-mode -1) ;; Don't alter long lines, i.e. no automatic breaking.
+  )
