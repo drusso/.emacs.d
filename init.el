@@ -8,6 +8,7 @@
 (load-conf "custom.el")
 (load-conf "bindings.el")
 (load-conf "frames.el")
+(load-conf "windows.el")
 (load-conf "packages.el")
 (load-conf "mouse.el")
 (load-conf "term.el")
@@ -22,6 +23,7 @@
 (load-conf "modes/diff-mode.el")
 (load-conf "modes/git-rebase-mode.el")
 (load-conf "modes/grep-mode.el")
+(load-conf "modes/magit-mode.el")
 (load-conf "modes/org-mode.el")
 (load-conf "modes/text-mode.el")
 
