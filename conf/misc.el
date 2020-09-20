@@ -70,16 +70,8 @@ Courtesy of:
           do (font-lock-add-keywords nil `((,r (1 '(face (:foreground ,c)))))))))
 
 (defun enter-visual-line-mode ()
-  "Helper for initializing visual-line-mode.
-
-The fringes are configured at this time, because the global
-fringe configuration (see visual.el) isn't suitable for
-displaying the curly arrow fringe indicators."
+  "Helper for initializing visual-line-mode."
   (interactive)
-  (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
-  (setq-local left-fringe-width 10)
-  (setq-local right-fringe-width 10)
-  (set-window-fringes (get-buffer-window) 10 10)
   (toggle-truncate-lines -1)
   (auto-fill-mode -1)
   (turn-on-visual-line-mode))
