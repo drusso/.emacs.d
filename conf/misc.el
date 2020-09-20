@@ -24,15 +24,39 @@ example, M-p."
   (interactive)
   (search-backward-regexp "[\"\|']|`"))
 
+(defun dr/copy-file-path ()
+  "Add the full file path of the current buffer to the kill
+ring."
+  (interactive)
+  (let ((p buffer-file-name))
+    (kill-new p)
+    (message (format "Copied buffer's file path: %s" p))))
+
 (defun dr/rename-current-file (new-name)
   "Rename the file of the current buffer, and automatically
 replace the buffer with the new file. Scroll position is
 preserved."
-  (interactive "sRename buffer to: ")
+  (interactive
+   (list
+      (let* ((path (buffer-file-name (current-buffer)))
+             (file-name (file-name-nondirectory path)))
+        (read-from-minibuffer (format "Rename %s: " file-name) file-name))))
   (let ((p (window-start nil)))
     (rename-file (buffer-file-name (current-buffer)) new-name)
     (find-alternate-file new-name)
     (set-window-start nil p)))
+
+(defun dr/delete-current-file ()
+  "Delete the current buffer's file, and kill the buffer."
+  (interactive)
+  (let* ((buffer (current-buffer))
+         (file-name (buffer-file-name buffer)))
+    (if (y-or-n-p (format "Delete %s? " file-name))
+        (progn
+          (delete-file file-name)
+          (kill-buffer buffer)
+          (message (format "Deleted %s" file-name)))
+        (message "Not deleted"))))
 
 (defun dr/copy-and-comment-region (beg end &optional arg)
   "Duplicate and comment out the selected line(s).
