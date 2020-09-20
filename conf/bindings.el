@@ -13,10 +13,10 @@
 ;; Buffer ovement
 (global-set-key (kbd "C-,") 'backward-paragraph)
 (global-set-key (kbd "C-.") 'forward-paragraph)
-(global-set-key (kbd "M-p") 'jump-15-lines-backwards)
-(global-set-key (kbd "M-n") 'jump-15-lines-forwards)
-(global-set-key (kbd "M-'") 'goto-next-quote)
-(global-set-key (kbd "M-;") 'goto-previous-quote)
+(global-set-key (kbd "M-p") 'dr/jump-15-lines-backwards)
+(global-set-key (kbd "M-n") 'dr/jump-15-lines-forwards)
+(global-set-key (kbd "M-'") 'dr/goto-next-quote)
+(global-set-key (kbd "M-;") 'dr/goto-previous-quote)
 
 ;; Regions
 (global-set-key (kbd "C-;") 'er/mark-inside-quotes)
@@ -25,7 +25,7 @@
 
 ;; Commenting
 (global-set-key (kbd "s-/") 'comment-line)
-(global-set-key (kbd "s-C") 'copy-and-comment-region)
+(global-set-key (kbd "s-C") 'dr/copy-and-comment-region)
 
 ;; Window navigation
 (global-set-key (kbd "s-<right>") 'windmove-right)

@@ -1,30 +1,30 @@
-(defun jump-15-lines-forwards ()
+(defun dr/jump-15-lines-forwards ()
   "Jumps 15 lines forwards in the buffer. A small convenience
 instead of running C-u 15 C-n. Only useful if bound to, for
 example, M-n."
   (interactive)
   (next-line 15))
 
-(defun jump-15-lines-backwards ()
+(defun dr/jump-15-lines-backwards ()
   "Jumps 15 lines backwards in the buffer. A small convenience
 instead of running C-u 15 C-p. Only useful if bound to, for
 example, M-p."
   (interactive)
   (previous-line 15))
 
-(defun goto-next-quote ()
+(defun dr/goto-next-quote ()
   "Moves the cursor to the next quotation mark or backtick."
   (interactive)
   (forward-char)
   (search-forward-regexp "[\"\|'|`]")
   (backward-char))
 
-(defun goto-previous-quote ()
+(defun dr/goto-previous-quote ()
   "Moves the cursor to the previous quotation mark or backtick."
   (interactive)
   (search-backward-regexp "[\"\|']|`"))
 
-(defun rename-current-file (new-name)
+(defun dr/rename-current-file (new-name)
   "Rename the file of the current buffer, and automatically
 replace the buffer with the new file. Scroll position is
 preserved."
@@ -34,7 +34,7 @@ preserved."
     (find-alternate-file new-name)
     (set-window-start nil p)))
 
-(defun copy-and-comment-region (beg end &optional arg)
+(defun dr/copy-and-comment-region (beg end &optional arg)
   "Duplicate and comment out the selected line(s).
 See `comment-region' for behavior of a prefix arg."
   (interactive "r\nP")
@@ -52,7 +52,7 @@ See `comment-region' for behavior of a prefix arg."
   (next-line)
   (back-to-indentation))
 
-(defun csv-highlight (&optional separator)
+(defun dr/csv-highlight (&optional separator)
   "Colour-code CSV columns.
 
 Courtesy of:
