@@ -18,3 +18,9 @@
           (lambda ()
             (if should-delete-trailing-whitespace
                 (delete-trailing-whitespace))))
+
+(defun dr/disable-whitespace-cleanup ()
+  "Disable whitespace modifications in the current buffer."
+  (interactive)
+  (setq-local should-delete-trailing-whitespace nil)
+  (setq-local require-final-newline nil))
