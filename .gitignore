@@ -17,6 +17,7 @@ my-autoload.el
 network-security.data
 news
 places
+projectile.cache
 projectile-bookmarks.eld
 recentf
 session*
