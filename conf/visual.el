@@ -3,6 +3,9 @@
 
 (load-theme 'molokai t)
 
+;; Blink the cursor.
+(blink-cursor-mode t)
+
 ;; Highlight matching parentheses, etc.
 (show-paren-mode 1)
 
