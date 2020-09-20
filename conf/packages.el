@@ -9,11 +9,8 @@
    diff-hl
    ess
    expand-region
-   flx-ido
-   flx-isearch
    haml-mode
    highlight-indent-guides
-   ido-completing-read+
    js2-mode
    json-mode
    magit
@@ -28,6 +25,12 @@
    smex
    swift-mode
    yaml-mode
+
+   ;; The ivy trio + a counsel integration with projectile.
+   ivy
+   swiper
+   counsel
+   counsel-projectile
    ))
 
 (package-initialize)

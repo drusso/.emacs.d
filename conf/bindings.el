@@ -7,9 +7,8 @@
 ;; to bind it to something else.
 (global-set-key (kbd "C-<return>") 'set-mark-command)
 
-;; Smex (a "M-x" enhancement)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; A "M-x" enhancement. Note `counsel-M-x' is enhanced by smex when installed.
+(global-set-key (kbd "M-x") 'counsel-M-x)
 
 ;; Buffer ovement
 (global-set-key (kbd "C-,") 'backward-paragraph)
@@ -35,12 +34,8 @@
 (global-set-key (kbd "s-<down>") 'windmove-down)
 
 ;; Search
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
-(global-set-key (kbd "C-S-s") 'flx-isearch-forward)
-(global-set-key (kbd "C-S-r") 'flx-isearch-backward)
+(global-set-key (kbd "C-s") 'swiper-isearch)
+(global-set-key (kbd "C-r") 'swiper-isearch)
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
 
@@ -54,16 +49,16 @@
 (global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Projectile & buffers
-(global-set-key (kbd "C-`") 'projectile-switch-to-buffer)
-(global-set-key (kbd "C-~") 'switch-to-buffer)
+(global-set-key (kbd "C-`") 'counsel-projectile-switch-to-buffer)
+(global-set-key (kbd "C-~") 'counsel-switch-buffer)
 (global-set-key (kbd "C--") 'switch-to-prev-buffer)
 (global-set-key (kbd "C-=") 'switch-to-next-buffer)
 (global-set-key (kbd "C-0") 'kill-this-buffer)
 (global-set-key (kbd "C-)") 'projectile-kill-buffers)
-(global-set-key (kbd "M-`") 'projectile-switch-open-project)
-(global-set-key (kbd "M-<tab>") 'projectile-switch-project)
-(global-set-key [(super t)] 'projectile-find-file)
-(global-set-key [(super r)] 'projectile-grep)
+(global-set-key (kbd "M-`") 'dr/counsel-projectile-switch-open-project)
+(global-set-key (kbd "M-<tab>") 'counsel-projectile-switch-project)
+(global-set-key [(super t)] 'counsel-projectile-find-file)
+(global-set-key [(super r)] 'counsel-projectile-grep)
 
 ;; Miscellaneous
 (global-set-key (kbd "C-c r") 'revert-buffer)

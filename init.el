@@ -12,7 +12,7 @@
 (load-conf "mouse.el")
 (load-conf "term.el")
 (load-conf "visual.el")
-(load-conf "ido.el")
+(load-conf "ivy.el")
 (load-conf "projectile.el")
 (load-conf "mode-line.el")
 (load-conf "whitespace.el")

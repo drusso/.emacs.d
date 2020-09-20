@@ -11,20 +11,25 @@
                 )
               projectile-globally-ignored-directories))
 
-(defun switch-to-project-buffer-or-find-file (&optional arg)
-  "Implements a projectile switch project action. Switches to any
-open buffer in the current project; if none is open, present the
-open file prompt. This differs from projectile's default
-behaviour, which will always presents the open file prompt."
-  (let ((buffer-candidates (delete (buffer-name (current-buffer))
-                                   (projectile-project-buffer-names))))
-    (if (> (length buffer-candidates) 0)
-        (switch-to-buffer (car buffer-candidates))
-        (projectile-find-file) ;; Present the open file prompt.
-      )
-    )
-  )
+(counsel-projectile-mode t)
+(setq counsel-projectile-remove-current-project t)
 
-;; Override projectile's default behaviour when switching projects (i.e. with
-;; projectile-switch-project or projectile-switch-open-project).
-(setq projectile-switch-project-action 'switch-to-project-buffer-or-find-file)
+;; When using projectile commands directly, rather than the counsel variants,
+;; use ivy completion.
+(setq projectile-completion-system 'ivy)
+
+(defun dr/counsel-projectile-switch-open-project ()
+  "A counsel version of `projectile-switch-open-project', in lieu
+of one from the counsel library."
+  (interactive)
+  (let ((dr/projectile-force-open-projects t))
+    (counsel-projectile-switch-project)))
+
+(advice-add
+ 'projectile-relevant-known-projects
+ :around
+ (lambda (fn &rest args)
+   (if (and (boundp 'dr/projectile-force-open-projects)
+            dr/projectile-force-open-projects)
+       (apply (symbol-function 'projectile-relevant-open-projects) args)
+       (apply fn args))))
