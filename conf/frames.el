@@ -1,3 +1,5 @@
+(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+
 (defun turn-off-bars ()
   (scroll-bar-mode -1)
   (horizontal-scroll-bar-mode -1)
