@@ -9,6 +9,9 @@
 ;; Remove the toolbar.
 (turn-off-bars)
 
+;; Remove tooltips.
+(tooltip-mode -1)
+
 ;; Remove the toolbar in new frames.
 (add-hook 'before-make-frame-hook 'turn-off-bars)
 
