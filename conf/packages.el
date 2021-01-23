@@ -19,9 +19,7 @@
    markdown-mode
    multiple-cursors
    projectile
-   rich-minority
    rust-mode
-   smart-mode-line
    smex
    swift-mode
    yaml-mode
