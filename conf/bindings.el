@@ -15,13 +15,10 @@
 (global-set-key (kbd "C-.") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'dr/jump-15-lines-backwards)
 (global-set-key (kbd "M-n") 'dr/jump-15-lines-forwards)
-(global-set-key (kbd "M-'") 'dr/goto-next-quote)
-(global-set-key (kbd "M-;") 'dr/goto-previous-quote)
 
 ;; Regions
 (global-set-key (kbd "C-;") 'er/mark-inside-quotes)
 (global-set-key (kbd "C-'") 'er/expand-region)
-(global-set-key (kbd "C-/") 'exchange-point-and-mark)
 
 ;; Commenting
 (global-set-key (kbd "s-/") 'comment-line)
@@ -36,6 +33,7 @@
 ;; Search
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "C-r") 'swiper-isearch)
+(global-set-key (kbd "C-S-s") 'swiper-isearch-thing-at-point)
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
 
