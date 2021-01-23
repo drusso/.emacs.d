@@ -23,6 +23,7 @@
 (load-conf "modes/diff-mode.el")
 (load-conf "modes/git-rebase-mode.el")
 (load-conf "modes/grep-mode.el")
+(load-conf "modes/idle-highlight-mode.el")
 (load-conf "modes/magit-mode.el")
 (load-conf "modes/org-mode.el")
 (load-conf "modes/text-mode.el")
