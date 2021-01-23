@@ -26,6 +26,7 @@
 (load-conf "modes/idle-highlight-mode.el")
 (load-conf "modes/magit-mode.el")
 (load-conf "modes/org-mode.el")
+(load-conf "modes/rust-mode.el")
 (load-conf "modes/text-mode.el")
 
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
