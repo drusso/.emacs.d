@@ -33,6 +33,7 @@
       ring-bell-function 'ignore
       smex-save-file (concat user-emacs-directory ".smex-items")
       visible-bell nil
+      enable-recursive-minibuffers t
       )
 
 ;; Don't uniquify buffer names, instead, always use the entire file path. Note
@@ -58,11 +59,19 @@
 
 (smex-initialize)
 (save-place-mode 1)
-(desktop-save-mode 1)
 
 (load-conf "hack-load-history.el")
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
+
+;; Set tramp's verbosity (0 = silent, 1 = error, 2 = warning, etc.)
+(setq tramp-verbose 1)
+
+;; Have save-desktop-mode remember all files, including remote SSH files.
+(setq desktop-files-not-to-save "^$")
+
+;; Disable vc's other version control backends.
+(setq vc-handled-backends '(Git))
 
 (server-start)
