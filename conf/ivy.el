@@ -43,3 +43,11 @@ direction. Intended to emulate `isearch-backward'."
 ;; When the selected candidate is a directory, continue completion with that
 ;; directory, rather than open dired.
 (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+
+;; When ivy displays a list of buffers, by default it will run a number of
+;; transformations on each buffer before displaying them. This replaces the
+;; transformer function to simply display the buffer name without
+;; transformation. The motivation for this is to improve performance when
+;; listing buffers.
+(ivy-configure 'internal-complete-buffer
+  :display-transformer-fn '(lambda (str) str))
