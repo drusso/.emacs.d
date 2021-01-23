@@ -8,6 +8,7 @@
    csv-mode
    diff-hl
    ess
+   exec-path-from-shell
    expand-region
    haml-mode
    highlight-indent-guides
