@@ -32,8 +32,14 @@
       inhibit-startup-screen nil
       ring-bell-function 'ignore
       smex-save-file (concat user-emacs-directory ".smex-items")
-      uniquify-buffer-name-style 'forward
       visible-bell nil
+      )
+
+;; Don't uniquify buffer names, instead, always use the entire file path. Note
+;; that there are customizations in mode-line.el to accomodate this style of
+;; buffer naming.
+(setq uniquify-buffer-name-style 'forward
+      uniquify-min-dir-content 999
       )
 
 (setq-default fill-column 79
