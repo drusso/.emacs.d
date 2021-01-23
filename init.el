@@ -29,7 +29,7 @@
 (load-conf "modes/text-mode.el")
 
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
-      inhibit-startup-screen nil
+      inhibit-startup-screen t
       ring-bell-function 'ignore
       smex-save-file (concat user-emacs-directory ".smex-items")
       visible-bell nil
