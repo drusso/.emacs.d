@@ -32,6 +32,16 @@ ring."
     (kill-new p)
     (message (format "Copied buffer's file path: %s" p))))
 
+(defun dr/copy-file-path-relative-to-project-root ()
+  "Add the file path of the current buffer relative to the
+project root to the kill ring."
+  (interactive)
+  (let ((p (file-relative-name
+            (buffer-file-name)
+            (projectile-project-root))))
+    (kill-new p)
+    (message (format "Copied buffer's project-relative file path: %s" p))))
+
 (defun dr/rename-current-file (new-name)
   "Rename the file of the current buffer, and automatically
 replace the buffer with the new file. Scroll position is
@@ -100,3 +110,16 @@ Courtesy of:
   (turn-on-visual-line-mode) ;; Edit/navigation commands act on visual lines.
   (auto-fill-mode -1) ;; Don't alter long lines, i.e. no automatic breaking.
   )
+
+(defun dr/parent-modes ()
+  "Get the parent modes of the current major mode."
+  (interactive)
+  (let* ((current major-mode)
+         (parent-modes ()))
+    (while current
+      (push current parent-modes)
+      (let ((parent (get current 'derived-mode-parent)))
+        (setq current parent)))
+    (if (called-interactively-p 'interactive)
+        (message (format "The modes are: %s" (reverse parent-modes))))
+    (reverse parent-modes)))
