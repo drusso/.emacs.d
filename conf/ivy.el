@@ -3,7 +3,7 @@
 (ivy-mode)
 (counsel-mode)
 
-(setq ivy-height 25)
+(setq ivy-height 15)
 (setq ivy-count-format "(%d/%d) ")
 (setq ivy-use-virtual-buffers t)
 (setq ivy-use-selectable-prompt t)
@@ -36,6 +36,10 @@ direction. Intended to emulate `isearch-backward'."
 ;; Emulate isearch-backward in the swiper minibuffer.
 (define-key swiper-map (kbd "C-r") 'dr/swiper-C-r)
 
-;; Support C-n/C-p in the ivy minibuffer.
-(define-key ivy-minibuffer-map (kbd "C-S") 'ivy-next-line)
+;; Support C-s/C-r in the ivy minibuffer.
+(define-key ivy-minibuffer-map (kbd "C-s") 'ivy-next-line)
 (define-key ivy-minibuffer-map (kbd "C-r") 'ivy-previous-line)
+
+;; When the selected candidate is a directory, continue completion with that
+;; directory, rather than open dired.
+(define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
