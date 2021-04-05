@@ -30,6 +30,21 @@
 (global-set-key (kbd "s-<up>") 'windmove-up)
 (global-set-key (kbd "s-<down>") 'windmove-down)
 
+;; Tab navigation
+(global-set-key (kbd "s-S-<right>") 'tab-next)
+(global-set-key (kbd "s-S-<left>") 'tab-previous)
+(global-set-key (kbd "s--") 'tab-bar-select-tab-by-name)
+(global-unset-key (kbd "s-_"))
+(global-set-key (kbd "s-=") 'dr/new-tab)
+(global-set-key (kbd "s-+") 'dr/open-project-in-new-tab)
+(dotimes (i 9) ;; Bind s-1 through s-9 to tabs.
+  (let ((d (+ i 1)))
+    (global-set-key (kbd (format "s-%d" d))
+                    `(lambda ()
+                       (interactive)
+                       (tab-bar-select-tab ,d)))))
+(global-set-key (kbd "s-0") 'tab-close)
+
 ;; Search
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "C-r") 'swiper-isearch)

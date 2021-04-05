@@ -33,3 +33,11 @@ of one from the counsel library."
             dr/projectile-force-open-projects)
        (apply (symbol-function 'projectile-relevant-open-projects) args)
        (apply fn args))))
+
+(defun dr/counsel-projectile-switch-project-action-maybe-vc (project-root)
+  "Open a project to magit (or any other supported VCS), with a
+fallback to dired if the project is not managed with a VCS."
+  (let ((vc (projectile-project-vcs project-root)))
+    (if (eq vc 'none)
+        (counsel-projectile-switch-project-action-dired project-root)
+      (counsel-projectile-switch-project-action-vc project-root))))

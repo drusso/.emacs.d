@@ -11,6 +11,7 @@
 (load-conf "windows.el")
 (load-conf "packages.el")
 (load-conf "mouse.el")
+(load-conf "tabs.el")
 (load-conf "term.el")
 (load-conf "visual.el")
 (load-conf "ivy.el")

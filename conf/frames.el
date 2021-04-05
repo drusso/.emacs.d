@@ -1,4 +1,7 @@
-(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+;; Set the frame title to the current tab # and name.
+(setq frame-title-format
+      (list
+       '(:eval (dr/current-tab-name-with-index))))
 
 (defun turn-off-bars ()
   (scroll-bar-mode -1)
