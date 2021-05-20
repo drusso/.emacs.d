@@ -74,6 +74,10 @@
 (global-set-key [(super t)] 'counsel-projectile-find-file)
 (global-set-key [(super r)] 'counsel-projectile-grep)
 
+;; Highlighting
+(global-set-key (kbd "C-c h") 'dr/highlight)
+(global-set-key (kbd "C-c H") 'dr/highlight-remove-all)
+
 ;; Miscellaneous
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c q") 'join-line)

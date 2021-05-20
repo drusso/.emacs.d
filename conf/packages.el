@@ -13,7 +13,6 @@
    expand-region
    haml-mode
    highlight-indent-guides
-   idle-highlight
    js2-mode
    json-mode
    magit
