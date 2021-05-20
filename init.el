@@ -18,7 +18,6 @@
 (load-conf "projectile.el")
 (load-conf "mode-line.el")
 (load-conf "whitespace.el")
-(load-conf "term.el")
 (load-conf "misc.el")
 (load-conf "modes/compilation-mode.el")
 (load-conf "modes/diff-mode.el")
