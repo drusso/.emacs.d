@@ -69,6 +69,10 @@
 ;; Set tramp's verbosity (0 = silent, 1 = error, 2 = warning, etc.)
 (setq tramp-verbose 1)
 
+;; Use the remote file cache -- potentially improves the speed of some tramp
+;; operations.
+(setq remote-file-name-inhibit-cache nil)
+
 ;; Have save-desktop-mode remember all files, including remote SSH files.
 (setq desktop-files-not-to-save "^$")
 
