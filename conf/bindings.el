@@ -10,7 +10,7 @@
 ;; A "M-x" enhancement. Note `counsel-M-x' is enhanced by smex when installed.
 (global-set-key (kbd "M-x") 'counsel-M-x)
 
-;; Buffer ovement
+;; Buffer movement
 (global-set-key (kbd "C-,") 'backward-paragraph)
 (global-set-key (kbd "C-.") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'dr/jump-15-lines-backwards)
