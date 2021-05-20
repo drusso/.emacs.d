@@ -8,5 +8,7 @@
 
 ;; Open buffers in the same window (if they match).
 (setq same-window-regexps
-      '("*.+*") ;; ex: *Help*
+      '("*.+*" ;; ex: *Help*
+        ".*"
+        )
       )
