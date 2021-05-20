@@ -4,6 +4,7 @@
  'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (setq package-selected-packages '(
+   ace-window
    clojure-mode
    csv-mode
    diff-hl
