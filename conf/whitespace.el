@@ -24,3 +24,9 @@
   (interactive)
   (setq-local should-delete-trailing-whitespace nil)
   (setq-local require-final-newline nil))
+
+(defun dr/enable-whitespace-cleanup ()
+  "Enable whitespace modifications in the current buffer."
+  (interactive)
+  (setq-local should-delete-trailing-whitespace t)
+  (setq-local require-final-newline t))
