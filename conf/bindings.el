@@ -67,7 +67,7 @@
 (global-set-key (kbd "C-0") 'kill-this-buffer)
 (global-set-key (kbd "C-)") 'projectile-kill-buffers)
 (global-set-key (kbd "M-`") 'dr/counsel-projectile-switch-open-project)
-(global-set-key (kbd "M-<tab>") 'counsel-projectile-switch-project)
+(global-set-key (kbd "M-~") 'counsel-projectile-switch-project)
 (global-set-key [(super t)] 'counsel-projectile-find-file)
 (global-set-key [(super r)] 'counsel-projectile-grep)
 
