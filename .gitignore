@@ -5,6 +5,7 @@ abbrev_defs
 auto-save-list
 backups
 bookmarks
+conf/custom.el
 el-get/
 elpa/
 elpa/archives

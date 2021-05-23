@@ -1,10 +1,16 @@
 ;; -*- mode: emacs-lisp -*-
 
+(setq custom-file
+      (concat user-emacs-directory
+              (file-name-as-directory "conf")
+              "custom.el"))
+
 (defun load-conf (conf-file-name)
   (load (concat user-emacs-directory
                 (file-name-as-directory "conf")
                 conf-file-name)))
 
+(load-conf "custom.el")
 (load-conf "bindings.el")
 (load-conf "frames.el")
 (load-conf "windows.el")
