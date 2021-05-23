@@ -5,7 +5,6 @@
                 (file-name-as-directory "conf")
                 conf-file-name)))
 
-(load-conf "custom.el")
 (load-conf "bindings.el")
 (load-conf "frames.el")
 (load-conf "windows.el")
