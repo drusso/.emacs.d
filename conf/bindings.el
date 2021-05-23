@@ -54,13 +54,10 @@
 (global-set-key (kbd "C-M-%") 'query-replace)
 
 ;; Multiple cursors
-(global-set-key (kbd "s-[") 'mc/edit-beginnings-of-lines)
-(global-set-key (kbd "s-]") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "s-\\") 'mc/edit-lines)
 (global-set-key (kbd "s-{") 'mc/mark-previous-like-this)
 (global-set-key (kbd "s-}") 'mc/mark-next-like-this)
 (global-set-key (kbd "s-|") 'mc/mark-all-in-region)
-(global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Projectile & buffers
 (global-set-key (kbd "C-`") 'counsel-projectile-switch-to-buffer)
