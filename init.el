@@ -12,11 +12,11 @@
 
 (load-conf "custom.el")
 (load-conf "bindings.el")
+(load-conf "tabs.el")
 (load-conf "frames.el")
 (load-conf "windows.el")
 (load-conf "packages.el")
 (load-conf "mouse.el")
-(load-conf "tabs.el")
 (load-conf "term.el")
 (load-conf "visual.el")
 (load-conf "highlight.el")
